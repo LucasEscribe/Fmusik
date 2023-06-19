@@ -1,0 +1,34 @@
+:root {
+    --general-background-color: rgb(47, 86, 61);
+}
+  
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100vh;
+}
+  
+.leftSidebar {
+    background-color: var(--general-background-color);
+    padding: 20px;
+}
+  
+.leftSidebarContent {
+    display: grid;
+    grid-template-rows: auto 1fr; /* Divide el contenido en dos filas, la primera de altura automática y la segunda ocupa el resto */
+    gap: 20px; /* Espacio entre los componentes en la columna */
+}
+  
+.center {
+    background-color: #737971;
+}
+  
+.mainContent {
+    padding: 20px;
+}
+  
+.homeContainer {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Divide el contenedor en dos columnas, la primera de ancho automático y la segunda ocupa el resto */
+}
+  

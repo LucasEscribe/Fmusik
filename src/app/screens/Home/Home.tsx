@@ -1,5 +1,6 @@
 import LeftSidebar from '../../components/LeftSidebar/LeftSidebar';
 import Center from '../../components/Center/Center';
+import styles from '../../index.module.css'
 
 interface HomeProps {
   isArtistProfile: boolean;
@@ -7,7 +8,7 @@ interface HomeProps {
 
 function Home(_props: HomeProps) {
   return (
-    <div>
+    <div className={styles.homeContainer}>
       <LeftSidebar />
       <Center />
     </div>

@@ -29,13 +29,13 @@ function Artist(props: ArtistProps) {
       <h2 className={styles.artist}>{props.name}</h2>
       <p className={styles.song}>{props.song}</p>
       <p className={styles.views}>{views}</p>
-      <div className={styles.buttonsContainer}>
+      <div className={`${styles.buttonsContainer} ${styles.buttonsContainer}`}>
         <button type="button" onClick={handlePlay} className={styles.playButton}>
           Play
         </button>
         <button
           type="button"
-          className={`${styles.favorite} ${isFav ? styles.favActive : styles.favInactive}`}
+          className={`${styles.favorite} ${!isFav ? styles.favInactive : styles.favActive}`}
           onClick={handleFavorite}
         >
           <span role="img" aria-label="Favorite">

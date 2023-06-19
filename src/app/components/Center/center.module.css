@@ -1,12 +1,36 @@
 .container {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  width: 190px;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  margin: 10px;
+}
+
+.container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.artist {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 200px;
   height: 330px;
   background-color: #555b60;
   padding: 20px;
-  margin: 10px;
+  margin-right: 10px;
 }
 
 .imgContainer {
@@ -19,11 +43,6 @@
 .img {
   width: 160px;
   height: 160px;
-}
-
-.artist {
-  font-size: 1.2em;
-  margin-bottom: 5px;
 }
 
 .song {
@@ -39,8 +58,8 @@
 .buttonsContainer {
   display: flex;
   justify-content: center;
-  align-items: flex;
-  margin-top: auto; 
+  align-items: flex-end;
+  margin-top: auto;
 }
 
 .playButton {
@@ -58,11 +77,9 @@
 }
 
 .favInactive {
-  border-radius: 5px;
   color: gray;
 }
 
 .favActive {
-  border-radius: 20px;
   color: red;
 }

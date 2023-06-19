@@ -1,22 +1,33 @@
+// fmusy2k\src\app\index.tsx
+
 import { useState } from 'react';
-import Home from './screens/Home/Home';
+import LeftSidebar from './components/LeftSidebar/LeftSidebar';
+import Center from './components/Center/Center';
 import LoadArtist from './components/LoadArtist/LoadArtist';
-import '../global.css';
+import TopMenu from './components/TopMenu/TopMenu';
+import styles from './index.module.css';
 
 function App() {
-  const [isArtistProfile] = useState(false);
+  const [isArtistProfile, setIsArtistProfile] = useState(false);
 
+  const handleToggleProfile = () => {
+    setIsArtistProfile(!isArtistProfile);
+  };
 
   return (
-    <div className="container">
-      <aside className="left-sidebar">
-        <main>
-          {isArtistProfile ? <LoadArtist /> : <div>Componente Listas Reproducción</div>}
+    <div className={styles.container}>
+      <aside className={styles.leftSidebar}>
+        <main className={styles.leftSidebarContent}>
+          <TopMenu />
+          <button className={styles.changeProfileButton} onClick={handleToggleProfile}>
+            Cambiar Perfil
+          </button>
+          {isArtistProfile && <LoadArtist />}
         </main>
       </aside>
-      <main className="center">
-        <div className="main-content">
-          <Home isArtistProfile={isArtistProfile} />
+      <main className={styles.center}>
+        <div className={styles.mainContent}>
+          <Center />
         </div>
       </main>
     </div>

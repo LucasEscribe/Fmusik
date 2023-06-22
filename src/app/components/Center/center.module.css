@@ -1,7 +1,7 @@
 .container {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
   padding: 20px;
   margin: 10px;
 }
